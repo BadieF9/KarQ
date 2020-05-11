@@ -33,7 +33,7 @@ Route::post('register','RegisterAndLogin@register');
 Route::post('login','RegisterAndLogin@login');
 Route::get('home', 'HomeController@index')->name('home');
 
-Route::prefix('articles')->group(function (){
+Route::prefix('articles')->middleware('auth')->group(function (){
     Route::get('/create','ArticleController@showCreate');
     Route::post('/create','ArticleController@storeArticle');
     Route::get('/{articles}/edit','ArticleController@viewEdit');
@@ -48,5 +48,3 @@ Route::prefix('admin')->namespace('Admin')->group(function (){
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
