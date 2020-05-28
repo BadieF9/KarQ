@@ -17,11 +17,5 @@ class DatabaseSeeder extends Seeder
             $user->articles()->saveMany(factory(Articles::class,rand(1,6))->make());
         });
 
-
-
-  /*     $this->call([
-           UserTableSeeder::class,
-           ArticlesTableSeeder::class
-       ]);*/
     }
 }

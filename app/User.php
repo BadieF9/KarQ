@@ -15,6 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //   The fillable variable makes these columns fillable and we can't insert or change them without calling them here
     protected $fillable = [
         'name', 'email', 'password',
     ];
